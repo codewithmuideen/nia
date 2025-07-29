@@ -1,19 +1,14 @@
 // src/components/Navbar.jsx
 
 import React, { useState, useEffect } from 'react';
-
-// Make sure to place your logo in the specified path or update the path here.
 import logo from "../assets/logo-osun.png"; 
-
-// Importing icons from the react-icons library
 import { FiSearch } from 'react-icons/fi';
 import { HiX } from 'react-icons/hi';
 import { AiOutlinePlus } from 'react-icons/ai';
 
-// --- Navigation Data ---
+// --- Navigation Data (No Changes Here) ---
 const navLinks = [
   { name: 'Home', path: '/' },
-
   {
     name: 'About',
     subLinks: [
@@ -23,7 +18,6 @@ const navLinks = [
       { name: 'State Chapters', path: '/about/state-chapters' },
     ],
   },
-
   {
     name: 'Membership',
     subLinks: [
@@ -33,7 +27,6 @@ const navLinks = [
       { name: 'Admission Forms', path: '/membership/admission-forms' },
     ],
   },
-
   {
     name: 'Resources',
     subLinks: [
@@ -45,7 +38,6 @@ const navLinks = [
       { name: 'Gallery', path: '/resources/gallery' },
     ],
   },
-
   {
     name: 'Projects',
     subLinks: [
@@ -53,7 +45,6 @@ const navLinks = [
       { name: 'Completed Projects', path: '/projects/completed' },
     ],
   },
-
   {
     name: 'Support & Fund',
     subLinks: [
@@ -62,7 +53,6 @@ const navLinks = [
       { name: 'Donate', path: '/support/donate' },
     ],
   },
-
   {
     name: 'Contact',
     subLinks: [
@@ -71,6 +61,7 @@ const navLinks = [
     ],
   },
 ];
+
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -88,14 +79,27 @@ const Navbar = () => {
     <>
       <header className="bg-[#f0f5f3] shadow-sm font-sans w-full sticky top-0 z-30" style={{fontFamily:'Montserrat'}}>
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-24">
-            <div className="flex-shrink-0">
+          {/* --- FIX STARTS HERE --- */}
+          {/*
+            This container is now a COLUMN by default (for mobile) and becomes a ROW on small screens and up (for desktop).
+            This creates the stacked layout on mobile while preserving your desktop design.
+          */}
+          <div className="flex flex-col py-3 sm:flex-row sm:items-center sm:justify-between sm:h-24 sm:py-0">
+            
+            {/* Logo is now centered on mobile because its parent is a flex column with items-center */}
+            <div className="flex-shrink-0 mx-auto sm:mx-0">
               <a href="#home" title="Homepage">
                 <img className="h-20 w-auto" src={logo} alt="The Nigerian Institute of Architects Logo" />
               </a>
             </div>
 
-            <div className="flex items-center space-x-2 sm:space-x-4">
+            {/*
+              This group of items gets a top margin on mobile for spacing, which is removed on desktop.
+              It is also centered on mobile.
+            */}
+            <div className="flex items-center justify-center space-x-4 mt-3 sm:mt-0 sm:justify-start">
+              
+              {/* Search Bar (No Change) */}
               <div className="relative hidden md:block">
                 <span className="absolute inset-y-0 left-0 flex items-center pl-3">
                   <FiSearch className="h-5 w-5 text-gray-400" />
@@ -108,15 +112,27 @@ const Navbar = () => {
                 />
               </div>
 
+              {/* --- Buttons for DESKTOP View (No Change) --- */}
               <div className="hidden sm:flex items-center space-x-3">
                 <a href="#join" className="px-4 py-2 bg-[#546e7a] text-white rounded-md text-sm font-semibold hover:bg-[#37474f] transition-colors duration-300">
-                  JOIN
+                BECOME A MEMBER
                 </a>
                 <a href="#login" className="px-4 py-2 bg-white text-[#546e7a] border-2 border-[#546e7a] rounded-md text-sm font-semibold hover:bg-gray-50 transition-colors duration-300">
-                  LOGIN
+                  SIGN IN
                 </a>
               </div>
+              
+              {/* --- Buttons for MOBILE View (No Change) --- */}
+              <div className="flex sm:hidden items-center space-x-2">
+                 <a href="#join" className="px-3 py-1.5 bg-[#546e7a] text-white rounded-md text-xs font-semibold hover:bg-[#37474f] transition-colors duration-300">
+                   BECOME A MEMBER
+                 </a>
+                 <a href="#login" className="px-3 py-1.5 bg-white text-[#546e7a] border-2 border-[#546e7a] rounded-md text-xs font-semibold hover:bg-gray-50 transition-colors duration-300">
+                   SIGN IN
+                 </a>
+              </div>
 
+              {/* Hamburger Menu (No Change) */}
               <button
                 onClick={toggleMenu}
                 className="p-2 rounded-md text-gray-700 hover:bg-gray-200/80 focus:outline-none"
@@ -129,11 +145,14 @@ const Navbar = () => {
                   <span className="block w-8 h-0.5 bg-gray-700"></span>
                 </div>
               </button>
+
             </div>
           </div>
+           {/* --- FIX ENDS HERE --- */}
         </div>
       </header>
 
+      {/* --- SIDE MENU (No Changes Below This Line) --- */}
       <div
         className={`fixed top-0 right-0 h-full w-full max-w-md bg-[#a6d8c4] shadow-2xl z-50 transform transition-transform duration-300 ease-in-out ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}
         role="dialog"

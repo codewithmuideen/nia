@@ -30,7 +30,7 @@ const slideData = [
 
 const HeroSlider = () => {
   return (
-    <div className="relative w-full h-[60vh] md:h-screen overflow-hidden">
+    <div className="relative w-full h-[60vh] md:h-screen overflow-hidden" style={{fontFamily:'Montserrat'}}>
       <Swiper
         modules={[EffectFade, Autoplay, Pagination]}
         effect="fade"
@@ -56,7 +56,7 @@ const HeroSlider = () => {
               />
               <div className="absolute inset-0 bg-black/50 z-10"></div>
 
-              <div className="absolute inset-0 flex items-end justify-start z-20">
+              <div className="absolute inset-0 flex items-end justify-start z-20" style={{fontFamily:'Montserrat'}}>
                 <div className="bg-[#1e293b]/90 text-white p-4 sm:p-6 md:p-10 m-4 sm:m-6 md:m-16 max-w-xl rounded-lg shadow-2xl">
                   <h1 className="text-xl sm:text-2xl md:text-5xl font-bold mb-2 md:mb-4 leading-snug font-montserrat">
                     {slide.title}
