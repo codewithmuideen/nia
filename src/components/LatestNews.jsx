@@ -4,50 +4,28 @@ import images from '../constants/images';
 const newsData = [
   {
     id: 1,
-    title: 'WORLD ENVIRONMENT DAY 2024. PRESS RELEASE',
-    date: 'June 4, 2024',
-    uppercase: true,
-    link: '/latestnews/world-environment-day-2024', // internal or relative
+    title: 'Ooni To Speak At NIA 8th Edition Of Osun Architects’ Sustainable Information Synthesis Forum',
+    date: '',
+    image: images.ooni,
+    link: 'https://citymirrornews.com/news/2025/31/ooni-to-speak-at-nia-8th-edition-of-osun-architects-sustainable-information-synthesis-forum/',
   },
   {
     id: 2,
-    title: 'NIA EGM/QUARTERLY DINNER: IKOGOSI 2024',
-    date: 'May 20, 2024',
-    uppercase: true,
-    link: '/latestnews/ikogosi-2024',
+    title: 'Ooni of Ife To Lead Conversation at 8th Edition of Osun Architects’ Forum',
+    date: '',
+    image: images.ooni2,
+    link: 'https://www.spyloadedng.com/spyloaded-news/ooni-of-ife-to-lead-conversation-at-the-8th-edition-of-osun-architects/',
   },
   {
     id: 3,
-    title: 'FAREWELL ARC (CHIEF) GABRIEL YAKUBU ADUKU, FNIA, RIBA, OON (1944-2024)',
-    date: 'April 18, 2024',
-    uppercase: true,
-    link: '/latestnews/gabriel-yakubu-aduku',
-  },
-  {
-    id: 4,
-    title: 'NIA PRESIDENT VISITS THE HON. MINISTER OF ENVIRONMENT',
-    date: 'March 7, 2024',
-    image: images.team,
-    uppercase: true,
-    link: 'https://news.com/environment-minister-visit', // external
-  },
-  {
-    id: 5,
-    title: 'Critiquing Nigeria’s Government Bias Towards Foreign Consultants',
-    date: 'February 29, 2024',
-    uppercase: false,
-    link: '/latestnews/government-bias',
-  },
-  {
-    id: 6,
-    title: 'President of NIA meets Hon. Minister of Mines and Steel',
-    date: 'February 1, 2024',
-    uppercase: false,
-    link: 'https://news.com/mines-and-steel-meeting', // external
+    title: 'Celebrating Afrocentric Design Concepts at the Upcoming OASIS Conference',
+    date: '',
+    image: images.osunvisit,
+    link: '',
   },
 ];
 
-const NewsCard = ({ image, title, date, uppercase, link }) => {
+const NewsCard = ({ image, title, date, link }) => {
   const isExternal = link.startsWith('http');
 
   return (
@@ -57,16 +35,16 @@ const NewsCard = ({ image, title, date, uppercase, link }) => {
       rel={isExternal ? 'noopener noreferrer' : undefined}
       className="group"
     >
-      <div className="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 flex flex-col h-full">
+      <div className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 flex flex-col h-full">
         {image && (
           <img
             src={image}
             alt={title}
-            className="w-full h-48 object-cover group-hover:opacity-90 transition-opacity"
+            className="w-full h-56 object-cover group-hover:opacity-90 transition-opacity"
           />
         )}
         <div className="p-5 flex flex-col flex-grow">
-          <h3 className={`text-lg font-semibold text-gray-800 mb-2 group-hover:text-[#2c5b43] ${uppercase ? 'uppercase' : ''}`}>
+          <h3 className="text-lg font-semibold text-gray-800 mb-2 group-hover:text-[#2c5b43]">
             {title}
           </h3>
           <div className="mt-auto">
@@ -86,9 +64,38 @@ const LatestNews = () => {
         {/* Section Header */}
         <div className="flex items-center gap-6 mb-12">
           <h2 className="text-3xl font-bold tracking-widest text-[#2c5b43]">
-            LATEST NEWS
+            LATEST EVENTS
           </h2>
           <hr className="w-full border-t border-gray-300" />
+        </div>
+
+        {/* OASIS 8.0 Highlight */}
+        <div className="bg-white rounded-xl shadow-md mb-16 overflow-hidden">
+          <img
+            src={images.oasis1}
+            alt="OASIS 8.0 Banner"
+            className="w-full h-[400px] object-cover"
+          />
+          <div className="p-6 md:p-10">
+            <h3 className="text-2xl font-bold text-[#2c5b43] mb-4">
+              OASIS 8.0 – RESPONSIBILITIES IN THE BUILT ENVIRONMENT
+            </h3>
+            <p className="text-gray-700 mb-2">
+              <strong>Theme:</strong> Towards Integrated Professional Action for Sustainable Future
+            </p>
+            <p className="text-gray-700 mb-2">
+              <strong>Date:</strong> Wednesday 13th Aug & Thursday 14th August, 2025
+            </p>
+            <p className="text-gray-700 mb-2">
+              <strong>Venue:</strong> Aurora Conference Center, Ring Road, Osogbo, Osun State
+            </p>
+            <p className="text-gray-700 mb-2">
+              <strong>Royal Father of the Day:</strong> His Imperial Majesty, Oba Adeyeye Enitan Ogunwusi (Ooni of Ife)
+            </p>
+            <p className="text-gray-700">
+              <strong>Contact & Enquiries:</strong> +234 803 698 7952, +234 803 396 9807 | Email: osunnia@gmail.com
+            </p>
+          </div>
         </div>
 
         {/* News Grid */}
@@ -99,7 +106,6 @@ const LatestNews = () => {
               image={item.image}
               title={item.title}
               date={item.date}
-              uppercase={item.uppercase}
               link={item.link}
             />
           ))}

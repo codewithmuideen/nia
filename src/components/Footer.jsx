@@ -11,7 +11,6 @@ const aboutLinks = [
   { text: 'How to Join', href: '#' },
   { text: 'Members\' Portal', href: '#' },
   { text: 'Events', href: '#' },
-  { text: 'Online Store', href: '#' },
   { text: 'E-Library', href: '#' },
   { text: 'Press', href: '#' },
   { text: 'AGM/BGM & Conferences', href: '#' },
@@ -44,7 +43,7 @@ const Footer = () => {
     <footer className="bg-black text-gray-300 font-sans" style={{ fontFamily: 'Montserrat' }}>
       <div className="max-w-screen-xl mx-auto py-16 px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
-          
+
           {/* Column 1: Institute Info */}
           <div className="md:col-span-2 lg:col-span-1">
             <div className="flex items-center mb-4">
@@ -55,7 +54,12 @@ const Footer = () => {
             </p>
             <div className="flex items-center space-x-3">
               {socialLinks.map((social) => (
-                <a key={social.name} href={social.href} aria-label={social.name} className="w-9 h-9 flex items-center justify-center bg-[#2a2a2a] text-white rounded-md transition-colors hover:bg-green-600">
+                <a
+                  key={social.name}
+                  href={social.href}
+                  aria-label={social.name}
+                  className="w-9 h-9 flex items-center justify-center bg-[#2a2a2a] text-white rounded-md transition-colors hover:bg-green-600"
+                >
                   {social.icon}
                 </a>
               ))}
@@ -68,31 +72,32 @@ const Footer = () => {
             <ul className="space-y-3 text-base">
               <li className="flex items-start">
                 <FaMapMarkerAlt className="w-4 h-4 mr-3 mt-1 text-gray-400 flex-shrink-0" />
-                <span>24, Magaji Muazu Crescent, Katampe Extension, FCT - Abuja Nigeria</span>
+                <span>Opposite, State House of Assembly, Behind Nigeria Revenue Service, Gbongan road, 
+                  Osogbo, Osun State</span>
               </li>
               <li className="flex items-center">
                 <FaPhoneAlt className="w-4 h-4 mr-3 text-gray-400 flex-shrink-0" />
-                <a href="tel:+23492900081" className="hover:text-white transition-colors">+234 9-2900081</a>
+                <a href="tel:+2348035771565" className="hover:text-white transition-colors">+2348035771565</a>
               </li>
-               <li className="flex items-center">
+              <li className="flex items-center">
                 <FaPhoneAlt className="w-4 h-4 mr-3 text-gray-400 flex-shrink-0" />
-                <a href="tel:+23492900082" className="hover:text-white transition-colors">+234 9-2900082</a>
+                <a href="tel:+2348033969807" className="hover:text-white transition-colors">+2348033969807</a>
               </li>
-               <li className="flex items-center">
+              <li className="flex items-center">
                 <FaPhoneAlt className="w-4 h-4 mr-3 text-gray-400 flex-shrink-0" />
-                <a href="tel:+23492900083" className="hover:text-white transition-colors">+234 9-2900083</a>
+                <a href="tel:+2349122100079" className="hover:text-white transition-colors">+2349122100079</a>
               </li>
               <li className="flex items-center">
                 <FaEnvelope className="w-4 h-4 mr-3 text-gray-400 flex-shrink-0" />
                 <a href="#" className="hover:text-white transition-colors">Contact Us</a>
               </li>
             </ul>
-            <h3 className="text-white font-bold text-lg mt-8 mb-4">Work Hours</h3>
+            {/* <h3 className="text-white font-bold text-lg mt-8 mb-4">Work Hours</h3>
             <div className="text-base">
               <p>Monday - Friday</p>
               <p>9am to 5pm</p>
               <p className="mt-2">Closed: Saturday/Sunday</p>
-            </div>
+            </div> */}
           </div>
 
           {/* Column 3: About Links */}
@@ -106,7 +111,7 @@ const Footer = () => {
               ))}
             </ul>
           </div>
-          
+
           {/* Column 4: Institute & External Links */}
           <div>
             <h3 className="text-white font-bold text-lg mb-4">The Institute</h3>
@@ -126,7 +131,22 @@ const Footer = () => {
               ))}
             </ul>
           </div>
+        </div>
 
+        {/* Copyright */}
+        <div className="border-t border-gray-700 pt-6 mt-8 text-center text-sm text-gray-400">
+          <p>&copy; {new Date().getFullYear()} Nigerian Institute of Architects, Osun State Chapter. All rights reserved.</p>
+          <p className="mt-2">
+            Developed by{' '}
+            <a
+               href="https://wa.me/2348065958604?text=How%20may%20I%20help%20you%3F"
+              className="text-[#2C5B43] hover:underline hover:text-white"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              NMHConcept
+            </a>
+          </p>
         </div>
       </div>
     </footer>

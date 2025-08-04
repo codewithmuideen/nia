@@ -6,69 +6,100 @@ import { FiSearch } from 'react-icons/fi';
 import { HiX } from 'react-icons/hi';
 import { AiOutlinePlus } from 'react-icons/ai';
 
-// --- Navigation Data (No Changes Here) ---
+// --- Optimized Navigation Structure ---
 const navLinks = [
   { name: 'Home', path: '/' },
   {
     name: 'About',
     subLinks: [
-      { name: 'About Us', path: '/about' },
-      { name: 'Board of Trustees', path: '/about/board-of-trustees' },
-      { name: 'Leadership Team', path: '/about/leadership-team' },
-      { name: 'State Chapters', path: '/about/state-chapters' },
+      { name: 'History of NIA', path: '/nia-osun-history' },
+      { name: 'About NIA', path: '/about-nia' },
+      { name: 'About NIA Osun', path: '/about-nia-osun' },
+      { name: 'Chairman Address', path: '/chairman-address' },
+      // { name: 'Board of Trustees', path: '/board-of-trustees' },
+      { name: 'Excos', path: '/excos' },
     ],
   },
   {
     name: 'Membership',
     subLinks: [
       { name: 'Membership Overview', path: '/membership' },
-      { name: 'Check Your Financial Status', path: '/membership/financial-status' },
-      { name: 'Exam Form', path: '/membership/exam-form' },
+      { name: 'Pay Dues (Local)', path: '/membership/pay-dues/local' },
+      { name: 'Pay Dues (National)', path: '/membership/pay-dues/national' },
+      { name: 'Financial Status', path: '/membership/financial-status' },
       { name: 'Admission Forms', path: '/membership/admission-forms' },
+      { name: 'Exam Form', path: '/membership/exam-form' },
+    ],
+  },
+  {
+    name: 'Directory',
+    subLinks: [
+      { name: 'Architects Practicing Outside Osun State', path: '/directory/architects-outside-osun-state' },
+      { name: 'Registered Architects', path: '/directory/architects' },
+      { name: 'Architectural Firms', path: '/directory/firms' },
+      { name: 'Schools of Architecture', path: '/directory/schools' },
+      { name: 'College of Fellows', path: '/directory/fellows' },
+      { name: 'Professors of Architecture', path: '/directory/professors' },
     ],
   },
   {
     name: 'Resources',
     subLinks: [
-      { name: 'Events', path: '/resources/events' },
-      { name: 'CPD', path: '/resources/cpd' },
+      { name: 'OASIS [1.0 - 8.0]', path: '/resources/oasis' },
       { name: 'Publications', path: '/resources/publications' },
-      { name: 'News', path: '/resources/news' },
       { name: 'E-Library', path: '/resources/e-library' },
-      { name: 'Gallery', path: '/resources/gallery' },
+      { name: 'Glossary of Terms', path: '/resources/glossary' },
+      { name: 'Downloadables', path: '/resources/downloads' },
+      { name: 'Archives', path: '/resources/archives' },
+      { name: 'Videos', path: '/resources/videos' },
     ],
   },
   {
-    name: 'Projects',
+    name: 'Community',
     subLinks: [
-      { name: 'Ongoing Projects', path: '/projects/ongoing' },
-      { name: 'Completed Projects', path: '/projects/completed' },
+      { name: 'Events', path: '/community/events' },
+      { name: 'News', path: '/community/news' },
+      { name: 'Gallery', path: '/community/gallery' },
+      { name: 'Awardees', path: '/community/awardees' },
+      { name: 'Goodwill Messages', path: '/community/goodwill-messages' },
+      { name: 'Freebies', path: '/community/freebies' },
     ],
   },
   {
-    name: 'Support & Fund',
+    name: 'Support',
     subLinks: [
-      { name: 'Benevolent Fund', path: '/benevolent-fund' },
-      { name: 'Partner with Us', path: '/support/partner' },
+      { name: 'CPD Programs', path: '/support/cpd' },
+      { name: 'Manufacturer of Month', path: '/support/manufacturer-spotlight' },
+      { name: 'Benevolent Fund', path: '/support/benevolent-fund' },
+      { name: 'Sponsorships', path: '/support/sponsorships' },
       { name: 'Donate', path: '/support/donate' },
+      { name: 'MDAs', path: '/support/mdas' },
     ],
   },
   {
     name: 'Contact',
     subLinks: [
       { name: 'Contact Us', path: '/contact' },
-      { name: 'FAQs', path: '/contact/faqs' },
+      { name: 'FAQs', path: '/faqs' },
     ],
   },
 ];
 
-
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState('');
+  const [searchQuery, setSearchQuery] = useState('');
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
   const handleDropdown = (name) => setOpenDropdown(openDropdown === name ? '' : name);
+
+  const handleSearch = (e) => {
+    e.preventDefault();
+    // Implement search functionality
+    console.log('Searching for:', searchQuery);
+    // Redirect to search results page
+    // window.location.href = `/search?q=${encodeURIComponent(searchQuery)}`;
+  };
 
   useEffect(() => {
     document.body.style.overflow = isMenuOpen ? 'hidden' : 'auto';
@@ -79,60 +110,48 @@ const Navbar = () => {
     <>
       <header className="bg-[#f0f5f3] shadow-sm font-sans w-full sticky top-0 z-30" style={{fontFamily:'Montserrat'}}>
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          {/* --- FIX STARTS HERE --- */}
-          {/*
-            This container is now a COLUMN by default (for mobile) and becomes a ROW on small screens and up (for desktop).
-            This creates the stacked layout on mobile while preserving your desktop design.
-          */}
           <div className="flex flex-col py-3 sm:flex-row sm:items-center sm:justify-between sm:h-24 sm:py-0">
             
-            {/* Logo is now centered on mobile because its parent is a flex column with items-center */}
             <div className="flex-shrink-0 mx-auto sm:mx-0">
-              <a href="#home" title="Homepage">
+              <a href="/" title="Homepage">
                 <img className="h-20 w-auto" src={logo} alt="The Nigerian Institute of Architects Logo" />
               </a>
             </div>
 
-            {/*
-              This group of items gets a top margin on mobile for spacing, which is removed on desktop.
-              It is also centered on mobile.
-            */}
             <div className="flex items-center justify-center space-x-4 mt-3 sm:mt-0 sm:justify-start">
               
-              {/* Search Bar (No Change) */}
-              <div className="relative hidden md:block">
+              <form onSubmit={handleSearch} className="relative hidden md:block">
                 <span className="absolute inset-y-0 left-0 flex items-center pl-3">
                   <FiSearch className="h-5 w-5 text-gray-400" />
                 </span>
                 <input
                   type="search"
                   name="search"
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
                   placeholder="Search..."
                   className="w-full sm:w-48 lg:w-64 pl-10 pr-4 py-2 border border-gray-300 rounded-md bg-white text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#546e7a] focus:border-transparent transition-all"
                 />
-              </div>
+              </form>
 
-              {/* --- Buttons for DESKTOP View (No Change) --- */}
               <div className="hidden sm:flex items-center space-x-3">
-                <a href="#join" className="px-4 py-2 bg-[#546e7a] text-white rounded-md text-sm font-semibold hover:bg-[#37474f] transition-colors duration-300">
-                BECOME A MEMBER
+                <a href="/member" className="px-4 py-2 bg-[#546e7a] text-white rounded-md text-sm font-semibold hover:bg-[#37474f] transition-colors duration-300">
+                  BECOME A MEMBER
                 </a>
-                <a href="#login" className="px-4 py-2 bg-white text-[#546e7a] border-2 border-[#546e7a] rounded-md text-sm font-semibold hover:bg-gray-50 transition-colors duration-300">
+                <a href="/login" className="px-4 py-2 bg-white text-[#546e7a] border-2 border-[#546e7a] rounded-md text-sm font-semibold hover:bg-gray-50 transition-colors duration-300">
                   SIGN IN
                 </a>
               </div>
               
-              {/* --- Buttons for MOBILE View (No Change) --- */}
               <div className="flex sm:hidden items-center space-x-2">
-                 <a href="#join" className="px-3 py-1.5 bg-[#546e7a] text-white rounded-md text-xs font-semibold hover:bg-[#37474f] transition-colors duration-300">
+                 <a href="/member" className="px-3 py-1.5 bg-[#546e7a] text-white rounded-md text-xs font-semibold hover:bg-[#37474f] transition-colors duration-300">
                    BECOME A MEMBER
                  </a>
-                 <a href="#login" className="px-3 py-1.5 bg-white text-[#546e7a] border-2 border-[#546e7a] rounded-md text-xs font-semibold hover:bg-gray-50 transition-colors duration-300">
+                 <a href="/login" className="px-3 py-1.5 bg-white text-[#546e7a] border-2 border-[#546e7a] rounded-md text-xs font-semibold hover:bg-gray-50 transition-colors duration-300">
                    SIGN IN
                  </a>
               </div>
 
-              {/* Hamburger Menu (No Change) */}
               <button
                 onClick={toggleMenu}
                 className="p-2 rounded-md text-gray-700 hover:bg-gray-200/80 focus:outline-none"
@@ -148,18 +167,17 @@ const Navbar = () => {
 
             </div>
           </div>
-           {/* --- FIX ENDS HERE --- */}
         </div>
       </header>
 
-      {/* --- SIDE MENU (No Changes Below This Line) --- */}
+      {/* --- SIDE MENU --- */}
       <div
         className={`fixed top-0 right-0 h-full w-full max-w-md bg-[#a6d8c4] shadow-2xl z-50 transform transition-transform duration-300 ease-in-out ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}
         role="dialog"
         aria-modal="true"
       >
         <div className="flex items-center justify-between p-4 border-b border-black/10">
-          <a href="#home" onClick={toggleMenu}>
+          <a href="/" onClick={toggleMenu}>
             <img className="h-14 w-auto" src={logo} alt="Logo" />
           </a>
           <button
@@ -170,6 +188,22 @@ const Navbar = () => {
             <HiX />
           </button>
         </div>
+
+        <form onSubmit={handleSearch} className="px-4 py-3 md:hidden">
+          <div className="relative">
+            <span className="absolute inset-y-0 left-0 flex items-center pl-3">
+              <FiSearch className="h-5 w-5 text-gray-400" />
+            </span>
+            <input
+              type="search"
+              name="search"
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              placeholder="Search..."
+              className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-md bg-white text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#546e7a] focus:border-transparent"
+            />
+          </div>
+        </form>
 
         <nav className="p-2 text-lg overflow-y-auto h-[calc(100vh-80px)]" style={{fontFamily:'Montserrat'}}>
           <ul>

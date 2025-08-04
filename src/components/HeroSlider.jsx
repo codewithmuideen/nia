@@ -12,7 +12,7 @@ const slideData = [
     id: 1,
     image: images.slider,
     title: "The Nigerian Institute of Architects",
-    subtitle: "The Policy Making Body for Architects In Nigeria",
+    subtitle: "Osun State Chapter",
   },
   {
     id: 2,

@@ -1,11 +1,11 @@
 import React from 'react';
 
-// Stats data array
+// Updated stats data
 const statsData = [
-    { value: '13,818', label: 'Members' },
-    { value: '36', label: 'State Chapters' },
-    { value: '687', label: 'Awards' },
-    { value: '1,903,592', label: 'Projects' },
+    { value: '2', label: 'Fellows' },
+    { value: '31', label: 'Full Members' },
+    { value: '81', label: 'Associate/Graduate Members' },
+    { value: '102', label: 'Student Members' },
 ];
 
 // Individual stat box
