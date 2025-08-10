@@ -14,7 +14,6 @@ import AffiliationsSection from './components/AffiliationsSection';
 import FAQSection from './components/FAQSection';
 
 // Pages
-import About from './pages/About';
 import Contact from './pages/Contact';
 import JoinNiaPage from './pages/JoinNiaPage';
 import LoginPage from './pages/LoginPage';
@@ -23,6 +22,7 @@ import DonationItems from './components/DonationItems';
 import ChairmanAddress from './components/ChairmanAddress';
 import SponsorshipSection from './components/SponsorshipSection';
 import ArchitectsDirectoryPage from './directory/ArchitectsDirectoryPage';
+import FirmsResident from './directory/FirmsResident';
 import OlabodeProfile from './pages/OlabodeProfile';
 import EjiwunmiProfile from './pages/EjiwunmiProfile';
 import AboutUs from './pages/AboutUs';
@@ -32,6 +32,9 @@ import ExcosPage from './pages/ExcosPage';
 import Newsletter from './components/Newsletter';
 import FAQPage from './pages/FAQPage';
 import ContactUsPage from './pages/ContactUsPage';
+import OsasonaProfile from './pages/OsasonaProfile';
+import RegisterArchitect from './pages/RegisterArchitect';
+import ArchitectureSchoolsOsun from './pages/ArchitectureSchoolsOsun';
 
 
 export default function App() {
@@ -57,14 +60,15 @@ export default function App() {
             </>
           }
         />
-        <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/member" element={<JoinNiaPage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/about-us" element={<AboutPage />} />
         <Route path="/directory/architects-outside-osun-state" element={<ArchitectsDirectoryPage />} />
+        <Route path="//directory/professors" element={<FirmsResident />} />
         <Route path="/pages/olabode-jegede/" element={<OlabodeProfile />} />
         <Route path="/pages/atinuke-ejiwumi/" element={<EjiwunmiProfile />} />
+        <Route path="/pages/ososona-profile/" element={<OsasonaProfile />} />
         <Route path="/about-nia-osun/" element={<AboutUs />} />
         <Route path="/nia-osun-history/" element={<History />} />
         <Route path="/about-nia/" element={<NiaPage />} />
@@ -72,6 +76,8 @@ export default function App() {
         <Route path="/excos/" element={<ExcosPage />} />
         <Route path="/faqs/" element={<FAQPage />} />
         <Route path="/contact/" element={<ContactUsPage />} />
+        <Route path="/directory/architects" element={<RegisterArchitect />} />
+        <Route path="/directory/schools" element={<ArchitectureSchoolsOsun />} />
        
       
         {/* Add more routes as needed */}

@@ -43,11 +43,15 @@ import ex14 from "../assets/ex14.jpg";
 import eji1 from "../assets/eji1.jpg";
 import eji2 from "../assets/eji2.jpeg";
 import bode from "../assets/bode2.jpeg";
+import pro from "../assets/pro.jpeg";
 import bode1 from "../assets/bode.jpg";
+import ososona from "../assets/ososona.jpg";
 
 
 export default {
   bode,
+  ososona,
+  pro,
   bode1,
   eji1,
   eji2,

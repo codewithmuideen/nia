@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import images from '../constants/images'; // As per your specified import path
 import { FiDownload, FiBriefcase, FiHome, FiAward, FiBookOpen, FiStar, FiGlobe, FiEye } from 'react-icons/fi';
-import jegede from '../assets/jegede.pdf';
+import jegede from '../assets/jegede-oladode.pdf';
+import project from '../assets/current-project.pdf';
 // --- Data Extracted from CV ---
 
 const profileData = {
@@ -64,7 +65,7 @@ const profileData = {
 // --- Helper Components for Cleanliness ---
 
 const Section = ({ title, icon, children }) => (
-  <div className="mb-8">
+  <div className="mb-8" style={{ fontFamily: 'Montserrat' }}>
     <h3 className="text-2xl font-bold text-gray-800 mb-4 flex items-center">
       {icon}
       <span className="ml-3">{title}</span>
@@ -76,7 +77,7 @@ const Section = ({ title, icon, children }) => (
 );
 
 const ProjectList = ({ title, projects, icon }) => (
-    <div className="mb-6">
+    <div className="mb-6" style={{ fontFamily: 'Montserrat' }}>
         <h4 className="text-xl font-semibold text-gray-700 mb-3 flex items-center">{icon}<span className='ml-2'>{title}</span></h4>
         <ul className="list-disc list-inside space-y-2 text-gray-600">
             {projects.map((proj, index) => <li key={index}>{proj}</li>)}
@@ -94,7 +95,7 @@ const OlabodeProfile = () => {
     switch (activeTab) {
       case 'Projects':
         return (
-            <div className='animate-fadeIn'>
+            <div className='animate-fadeIn' style={{ fontFamily: 'Montserrat' }}>
                 <ProjectList title="Commercial & Industrial" projects={profileData.projects.commercial} icon={<FiBriefcase className="text-blue-500" />} />
                 <ProjectList title="Residential" projects={profileData.projects.residential} icon={<FiHome className="text-blue-500" />} />
                 <ProjectList title="Institutional" projects={profileData.projects.institutional} icon={<FiAward className="text-blue-500" />} />
@@ -102,7 +103,7 @@ const OlabodeProfile = () => {
         );
       case 'Philosophy':
         return (
-            <div className='animate-fadeIn'>
+            <div className='animate-fadeIn' style={{ fontFamily: 'Montserrat' }}>
                  <Section title="Architectural Philosophy" icon={<FiEye className="text-blue-500" />}>
                     <ul className="list-none space-y-3">
                         {profileData.philosophy.map((item, index) => (
@@ -118,7 +119,7 @@ const OlabodeProfile = () => {
       case 'About':
       default:
         return (
-            <div className='animate-fadeIn space-y-8'>
+            <div className='animate-fadeIn space-y-8' style={{ fontFamily: 'Montserrat' }}>
                 <Section title="Education" icon={<FiBookOpen className="text-blue-500" />}>
                     {profileData.education.map((edu, index) => (
                         <div key={index}>
@@ -127,7 +128,7 @@ const OlabodeProfile = () => {
                         </div>
                     ))}
                 </Section>
-                <Section title="Professional Memberships" icon={<FiAward className="text-blue-500" />}>
+                <Section title="Professional Memberships" icon={<FiAward className="text-blue-500" />} style={{ fontFamily: 'Montserrat' }}>
                     {profileData.memberships.map((mem, index) => (
                         <div key={index}>
                             <p className="font-semibold text-gray-700">{mem.name}</p>
@@ -135,7 +136,7 @@ const OlabodeProfile = () => {
                         </div>
                     ))}
                 </Section>
-                 <Section title="Languages" icon={<FiGlobe className="text-blue-500" />}>
+                 <Section title="Languages" icon={<FiGlobe className="text-blue-500" />} style={{ fontFamily: 'Montserrat' }}>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                         {profileData.languages.map((lang, index) => (
                             <div key={index} className="p-3 bg-gray-50 rounded-lg">
@@ -157,11 +158,11 @@ const OlabodeProfile = () => {
   const tabs = ['About', 'Projects', 'Philosophy'];
 
   return (
-    <div className="bg-gray-100 min-h-screen font-sans p-4 sm:p-6 lg:p-8">
+    <div className="bg-gray-100 min-h-screen font-sans p-4 sm:p-6 lg:p-8" style={{ fontFamily: 'Montserrat' }}>
       <div className="container mx-auto max-w-6xl bg-white rounded-2xl shadow-2xl overflow-hidden">
         
         {/* --- Hero Section --- */}
-        <div className="bg-gradient-to-br from-gray-700 via-gray-900 to-black p-8 md:p-12 relative">
+        <div className="bg-gradient-to-br from-gray-700 via-gray-900 to-black p-8 md:p-12 relative" style={{ fontFamily: 'Montserrat' }}>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
                 <div className="relative h-64 w-64 mx-auto md:mx-0 col-span-1 flex items-center justify-center">
                     <img 
@@ -177,24 +178,36 @@ const OlabodeProfile = () => {
                         style={{width: '240px', height: '240px'}}
                     />
                 </div>
-                <div className="text-white text-center md:text-left col-span-2">
+                <div className="text-white text-center md:text-left col-span-2" style={{ fontFamily: 'Montserrat' }}>
                     <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight">Arc. (Dr.) {profileData.name}</h1>
                     <p className="text-xl text-blue-300 mt-2">{profileData.titles}</p>
                     <p className="mt-4 text-gray-300 max-w-2xl">{profileData.bio}</p>
-                    <a 
-                        href={jegede} // Placeholder link
-                        download
-                        className="mt-6 inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-900 focus:ring-blue-500 transition-transform transform hover:scale-105"
-                    >
-                        <FiDownload className="-ml-1 mr-3 h-5 w-5" />
-                        Download CV
-                    </a>
+                   <div className="mt-6 flex flex-wrap gap-4">
+  <a 
+    href={jegede}
+    download
+    className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-900 focus:ring-blue-500 transition-transform transform hover:scale-105"
+  >
+    <FiDownload className="-ml-1 mr-3 h-5 w-5" />
+    Download CV
+  </a>
+
+  <a 
+    href={project}
+    download
+    className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-900 focus:ring-blue-500 transition-transform transform hover:scale-105"
+  >
+    <FiDownload className="-ml-1 mr-3 h-5 w-5" />
+    Ule-Ona Project
+  </a>
+</div>
+
                 </div>
             </div>
         </div>
 
         {/* --- Tabs & Content Section --- */}
-        <div className="p-8 md:p-12">
+        <div className="p-8 md:p-12" style={{ fontFamily: 'Montserrat' }}>
             <div className="mb-8 border-b border-gray-200">
                 <nav className="-mb-px flex space-x-6" aria-label="Tabs">
                 {tabs.map((tab) => (

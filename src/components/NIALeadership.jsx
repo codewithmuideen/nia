@@ -8,7 +8,8 @@ const leadership = [
   { name: "Arc. Dr. Oladunni Izobo-Martins, mnia", title: "Vice Chair", image: images.oladunni },
   { name: "Arc. Dr. Ayodeji Ajayi, mnia", title: "Treasurer", image: images.ayodeji },
   { name: "Arc Clement A. Tokede, mnia", title: "Secretary", image: images.clement},
-  { name: "Arc. Adesiji Balogun, mnia", title: "Assistant Secretary", image: images.adesiji }, // Replace with actual image
+  { name: "Arc. Adesiji Balogun, mnia", title: "Assistant Secretary", image: images.adesiji }, 
+  { name: "Arc. Olusola Michael Adubi", title: "Public Relations Officer", image: images.pro }, 
 ];
 
 const NIALeadership = () => {

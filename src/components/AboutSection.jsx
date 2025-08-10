@@ -91,7 +91,10 @@ const AboutSection = () => {
                   <ul className="list-disc list-inside pl-4">
                     <li>Arc. S.A. Amole (1996–2005)</li>
                     <li>Arc. A.O. Usman (2005–2011)</li>
-                    <li>Arc. (Chief) T. Bamidele Ojo (2011–Present)</li>
+                    <li>Arc. (Chief) T. Bamidele Ojo 2011</li>
+                    <li>Arc. Oyegoke Omigbodun fnia</li>
+                    <li>Arc. Biola Akinola, mnia</li>
+                    <li>Arc. Emmanuel Oladejo, mnia (2023 - Date)</li>
                   </ul>
                 </p>
                 <p>

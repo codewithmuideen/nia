@@ -11,6 +11,7 @@ const leadershipData = [
   { name: "Arc. Dr. Ayodeji Ajayi, mnia", title: "Treasurer", image: images.ayodeji },
   { name: "Arc Clement A. Tokede, mnia", title: "Secretary", image: images.clement },
   { name: "Arc. Adesiji Balogun, mnia", title: "Assistant Secretary", image: images.adesiji },
+  { name: "Arc. Olusola Michael Adubi", title: "Public Relations Officer", image: images.pro }, 
 ];
 
 // --- Reusable, Interactive Leader Card Component ---

@@ -35,10 +35,11 @@ const navLinks = [
     name: 'Directory',
     subLinks: [
       { name: 'Architects Practicing Outside Osun State', path: '/directory/architects-outside-osun-state' },
+      // { name: 'Firms Resident in Osun State', path: '/firms-resident-osun-state' },
       { name: 'Registered Architects', path: '/directory/architects' },
-      { name: 'Architectural Firms', path: '/directory/firms' },
+      { name: 'Architectural Firms in Osun State', path: '/directory/firms' },
       { name: 'Schools of Architecture', path: '/directory/schools' },
-      { name: 'College of Fellows', path: '/directory/fellows' },
+      // { name: 'College of Fellows', path: '/directory/fellows' },
       { name: 'Professors of Architecture', path: '/directory/professors' },
     ],
   },
