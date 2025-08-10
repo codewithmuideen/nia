@@ -50,48 +50,48 @@
 
 
 
-require('dotenv').config(); // ✅ must come first
+// require('dotenv').config(); // ✅ must come first
 
-const express = require('express');
-const cors = require('cors');
-const axios = require('axios');
+// const express = require('express');
+// const cors = require('cors');
+// const axios = require('axios');
 
-const app = express();
-app.use(cors());
-app.use(express.json());
+// const app = express();
+// app.use(cors());
+// app.use(express.json());
 
-app.post('/create-checkout-session', async (req, res) => {
-  const { amount, type, email } = req.body;
+// app.post('/create-checkout-session', async (req, res) => {
+//   const { amount, type, email } = req.body;
 
-  if (!amount || !type || !email) {
-    return res.status(400).json({ error: 'Missing required fields.' });
-  }
+//   if (!amount || !type || !email) {
+//     return res.status(400).json({ error: 'Missing required fields.' });
+//   }
 
-  try {
-    // Paystack expects amount in kobo (so multiply by 100)
-    const response = await axios.post(
-      'https://api.paystack.co/transaction/initialize',
-      {
-        email,
-        amount: amount * 100,
-        metadata: { custom_fields: [{ display_name: "Payment Type", value: type }] },
-        callback_url: `${process.env.CLIENT_URL}/payment-success`,
-      },
-      {
-        headers: {
-          Authorization: `Bearer ${process.env.PAYSTACK_SECRET_KEY}`,
-          'Content-Type': 'application/json',
-        },
-      }
-    );
+//   try {
+//     // Paystack expects amount in kobo (so multiply by 100)
+//     const response = await axios.post(
+//       'https://api.paystack.co/transaction/initialize',
+//       {
+//         email,
+//         amount: amount * 100,
+//         metadata: { custom_fields: [{ display_name: "Payment Type", value: type }] },
+//         callback_url: `${process.env.CLIENT_URL}/payment-success`,
+//       },
+//       {
+//         headers: {
+//           Authorization: `Bearer ${process.env.PAYSTACK_SECRET_KEY}`,
+//           'Content-Type': 'application/json',
+//         },
+//       }
+//     );
 
-    // Return Paystack's payment page URL
-    res.json({ authorization_url: response.data.data.authorization_url });
-  } catch (error) {
-    console.error('Paystack error:', error.response?.data || error.message);
-    res.status(500).json({ error: 'Payment initialization failed.' });
-  }
-});
+//     // Return Paystack's payment page URL
+//     res.json({ authorization_url: response.data.data.authorization_url });
+//   } catch (error) {
+//     console.error('Paystack error:', error.response?.data || error.message);
+//     res.status(500).json({ error: 'Payment initialization failed.' });
+//   }
+// });
 
-const PORT = 4242;
-app.listen(PORT, () => console.log(`🚀 Server running on http://localhost:${PORT}`));
+// const PORT = 4242;
+// app.listen(PORT, () => console.log(`🚀 Server running on http://localhost:${PORT}`));
