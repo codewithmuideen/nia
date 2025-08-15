@@ -235,7 +235,7 @@ const InfoBox = ({ color, title, children }) => {
   );
 };
 
-const MembershipModal = ({ show, onClose }) => {
+export const MembershipModal = ({ show, onClose }) => {
   const [step, setStep] = useState('initial');
   const [isExistingMember, setIsExistingMember] = useState('');
   const [category, setCategory] = useState('');

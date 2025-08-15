@@ -11,7 +11,7 @@ const architectsData = [
     title: 'First Female Professor of Architecture, OAU',
     description: 'Trailblazing academic and cultural heritage advocate, renowned for her work in African and vernacular architecture.',
     image: images.ososona, // Main profile image
-    profileUrl: '/pages/ososona-profile/', // Route to her profile page
+    profileUrl: '/pages/osasona-profile/', // Route to her profile page
   },
 ];
 

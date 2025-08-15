@@ -35,6 +35,11 @@ import ContactUsPage from './pages/ContactUsPage';
 import OsasonaProfile from './pages/OsasonaProfile';
 import RegisterArchitect from './pages/RegisterArchitect';
 import ArchitectureSchoolsOsun from './pages/ArchitectureSchoolsOsun';
+import MemorialPage from './components/MemorialPage';
+import LiveEvent from './components/LiveEvent';
+import PayDuesPage from './components/PayDuesPage';
+import DonatePage from './components/DonatePage';
+import OasisForumPage from './pages/OasisForumPage';
 
 
 export default function App() {
@@ -52,6 +57,7 @@ export default function App() {
               <NIALeadership />
               <StatsBar />
               <LatestNews />
+              <LiveEvent />
               <SponsorshipSection />
               <AffiliationsSection />
               <DonationItems />
@@ -64,11 +70,12 @@ export default function App() {
         <Route path="/member" element={<JoinNiaPage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/about-us" element={<AboutPage />} />
+        <Route path="/in-memoriam" element={<MemorialPage />} />
         <Route path="/directory/architects-outside-osun-state" element={<ArchitectsDirectoryPage />} />
         <Route path="//directory/professors" element={<FirmsResident />} />
         <Route path="/pages/olabode-jegede/" element={<OlabodeProfile />} />
         <Route path="/pages/atinuke-ejiwumi/" element={<EjiwunmiProfile />} />
-        <Route path="/pages/ososona-profile/" element={<OsasonaProfile />} />
+        <Route path="/pages/osasona-profile/" element={<OsasonaProfile />} />
         <Route path="/about-nia-osun/" element={<AboutUs />} />
         <Route path="/nia-osun-history/" element={<History />} />
         <Route path="/about-nia/" element={<NiaPage />} />
@@ -78,6 +85,9 @@ export default function App() {
         <Route path="/contact/" element={<ContactUsPage />} />
         <Route path="/directory/architects" element={<RegisterArchitect />} />
         <Route path="/directory/schools" element={<ArchitectureSchoolsOsun />} />
+        <Route path="/pay-dues" element={<PayDuesPage />} />
+        <Route path="/donate" element={<DonatePage />} />
+        <Route path="/oasis" element={<OasisForumPage />} />
        
       
         {/* Add more routes as needed */}

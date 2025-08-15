@@ -18,14 +18,15 @@ const navLinks = [
       { name: 'Chairman Address', path: '/chairman-address' },
       // { name: 'Board of Trustees', path: '/board-of-trustees' },
       { name: 'Excos', path: '/excos' },
+      { name: 'In Memoriam', path: '/in-memoriam' },
     ],
   },
   {
     name: 'Membership',
     subLinks: [
       { name: 'Membership Overview', path: '/membership' },
-      { name: 'Pay Dues (Local)', path: '/membership/pay-dues/local' },
-      { name: 'Pay Dues (National)', path: '/membership/pay-dues/national' },
+      { name: 'Pay Dues (Local)', path: '/pay-dues' },
+      { name: 'Pay Dues (National)', path: '/pay-dues' },
       { name: 'Financial Status', path: '/membership/financial-status' },
       { name: 'Admission Forms', path: '/membership/admission-forms' },
       { name: 'Exam Form', path: '/membership/exam-form' },
@@ -46,7 +47,7 @@ const navLinks = [
   {
     name: 'Resources',
     subLinks: [
-      { name: 'OASIS [1.0 - 8.0]', path: '/resources/oasis' },
+      { name: 'OASIS [1.0 - 8.0]', path: '/oasis' },
       { name: 'Publications', path: '/resources/publications' },
       { name: 'E-Library', path: '/resources/e-library' },
       { name: 'Glossary of Terms', path: '/resources/glossary' },
@@ -69,12 +70,12 @@ const navLinks = [
   {
     name: 'Support',
     subLinks: [
-      { name: 'CPD Programs', path: '/support/cpd' },
-      { name: 'Manufacturer of Month', path: '/support/manufacturer-spotlight' },
-      { name: 'Benevolent Fund', path: '/support/benevolent-fund' },
-      { name: 'Sponsorships', path: '/support/sponsorships' },
-      { name: 'Donate', path: '/support/donate' },
-      { name: 'MDAs', path: '/support/mdas' },
+      { name: 'CPD Programs', path: '/donate' },
+      { name: 'Manufacturer of Month', path: '/donate' },
+      { name: 'Benevolent Fund', path: '/donate' },
+      { name: 'Sponsorships', path: '/donate' },
+      { name: 'Donate', path: '/donate' },
+      { name: 'MDAs', path: '/donate' },
     ],
   },
   {

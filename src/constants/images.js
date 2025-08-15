@@ -24,8 +24,11 @@ import osunvisit from "../assets/osunvisit.jpeg";
 import oasis from "../assets/oasis.jpeg";
 import oasis1 from "../assets/oasis1.jpeg";
 import oasis2 from "../assets/oasis2.jpeg";
+import oasis3 from "../assets/oasis3.jpeg";
+import oasis4 from "../assets/oasis4.jpeg";
 import ooni from "../assets/ooni.jpg";
 import ooni2 from "../assets/ooni2.png";
+import ewemade from "../assets/ewemade.png";
 import ex1 from "../assets/ex1.png";
 import ex2 from "../assets/ex2.jpg";
 import ex3 from "../assets/ex3.jpg";
@@ -50,7 +53,10 @@ import ososona from "../assets/ososona.jpg";
 
 export default {
   bode,
+  ewemade,
   ososona,
+  oasis3,
+  oasis4,
   pro,
   bode1,
   eji1,
